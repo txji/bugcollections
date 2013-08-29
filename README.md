@@ -25,3 +25,5 @@ Record the problems I encountered.
 	/* demo & demo li向左浮动，则没有上面ul宽度计算错误的问题，但会触发ie6的双边距bug */
 
 demo地址：ie67-float-bug.html
+
+test

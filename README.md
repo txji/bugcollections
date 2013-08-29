@@ -22,6 +22,5 @@ Record the problems I encountered.
 	.demo{float:right;background-color:#090;margin:0;padding:0;}
 	.demo li{float:right;list-style:none;background-color:#f00;margin-left:10px;}
 	/* demo & demo li向右浮动，会导致ul宽度计算错误(ie67:100%)。跟zoom:1;没有半毛钱关系 */
-	/* demo & demo li向左浮动，则没有上面ul宽度计算错误的问题，但会触发ie6的双边距bug */
 
 demo地址：ie67-float-bug.html

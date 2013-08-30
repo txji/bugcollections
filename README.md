@@ -24,3 +24,24 @@ Record the problems I encountered.
 	/* demo & demo li向右浮动，会导致ul宽度计算错误(ie67:100%)。跟zoom:1;没有半毛钱关系 */
 
 demo地址：ie67-float-bug.html
+
+##IE6 absolute与float相邻，absolute元素消失bug
+
+结构
+
+	<div class="demo">
+		<div class="pa">absolute</div>
+		<div class="fl">float:left;one</div>
+		<div class="fl2">right</div>
+	</div>
+
+样式
+
+	<style type="text/css">
+		.demo{position:relative;z-index:1;background-color:#09c;height:320px;width:800px;margin:0 auto;}
+		.demo .fl{ float:left;width:300px;height:20px;background-color:red;}
+		.demo .fl2{width:500px; height:20px; background-color:#00F; float:left}
+		.demo .pa{position:absolute;width:100px;height:100px;top:32px;right:0;background-color:red;color:#999;}
+	</style>
+
+网上看到最多的就是上面的例子。当时我自己也写过类似的结构，但是没有重现这个bug。于是就开始分析，为什么我写的代码不能重现，与上面的例子有什么区别，后来终于找到了。那就是，如果父元素.demo的宽度与里面向左浮动子元素宽度之差，小于3px时（子元素的padding与border存在，请加上），就会消失。

@@ -25,7 +25,7 @@ Record the problems I encountered.
 
 demo地址：ie67-float-bug.html
 
-##IE6 absolute与float相邻，absolute元素消失bug
+##2.IE6 absolute与float相邻，absolute元素消失bug
 
 结构
 
@@ -44,4 +44,6 @@ demo地址：ie67-float-bug.html
 		.demo .pa{position:absolute;width:100px;height:100px;top:32px;right:0;background-color:red;color:#999;}
 	</style>
 
-网上看到最多的就是上面的例子。当时我自己也写过类似的结构，但是没有重现这个bug。于是就开始分析，为什么我写的代码不能重现，与上面的例子有什么区别，后来终于找到了。那就是，如果父元素.demo的宽度与里面向左浮动子元素宽度之差，小于3px时（子元素的padding与border存在，请加上），就会消失。
+网上看到最多的就是上面的例子。当时我自己也写过类似的结构，但是没有重现这个bug。于是就开始分析，为什么我写的代码不能重现，与上面的例子有什么区别，后来终于找到了。那就是，如果父元素.demo的宽度与里面向左浮动子元素宽度之差，小于3px时（子元素的padding、margin与border存在，请加上），就会消失。
+
+demo地址：ie6absolute-float.html
